@@ -27,4 +27,15 @@ node{
          usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
     }
 
+    stage('Copy Artifact to Ansible-Server and deploy'){
+
+        sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '',
+        execCommand: '''ansible-playbook -i /opt/docker/inventory /opt/docker/kube_deploy.yml;
+        sleep 10;
+        ansible-playbook -i inventory kube_service.yml''', execTimeout: 1200000, flatten: false, makeEmptyDirs: false, 
+        noDefaultExcludes: false, patternSeparator: '[, ]+', 
+        remoteDirectory: '//opt//docker', remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/*.jar')], 
+        usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+            }
+
 }
