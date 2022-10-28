@@ -4,13 +4,13 @@
  
   <groupId>Bank</groupId>
   <artifactId>OBS-app</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>cd
  
   <properties>
     <sonar.java.source>11</sonar.java.source>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <sonar.host.url>http://192.168.1.91:9000</sonar.host.url>
+    <sonar.host.url>http://192.168.14.165:9000</sonar.host.url>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
   </properties>
