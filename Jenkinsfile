@@ -23,18 +23,8 @@ node{
          execCommand: '''ansible-playbook create_image.yml;
          sleep 10''', execTimeout: 1200000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+',
          remoteDirectory: '//opt//docker', 
-         remoteDirectorySDF: false, removePrefix: 'webapp/target', sourceFiles: 'webapp/target/*.war')], 
+         remoteDirectorySDF: false, removePrefix: 'obs/target', sourceFiles: 'obs/target/*.jar')], 
          usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
     }
 
-    stage('Copy Artifact to Ansible-Server and deploy'){
-
-        sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '',
-        execCommand: '''ansible-playbook -i /opt/docker/inventory /opt/docker/kube_deploy.yml;
-        sleep 10;
-        ansible-playbook -i inventory kube_service.yml''', execTimeout: 1200000, flatten: false, makeEmptyDirs: false, 
-        noDefaultExcludes: false, patternSeparator: '[, ]+', 
-        remoteDirectory: '//opt//docker', remoteDirectorySDF: false, removePrefix: 'webapp/target', sourceFiles: 'webapp/target/*.war')], 
-        usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
-            }
 }
