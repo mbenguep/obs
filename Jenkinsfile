@@ -23,7 +23,7 @@ node{
          execCommand: '''ansible-playbook create_image.yml;
          sleep 10''', execTimeout: 1200000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+',
          remoteDirectory: '//opt//docker', 
-         remoteDirectorySDF: false, removePrefix: 'obs/target', sourceFiles: 'obs/target/*.jar')], 
+         remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/*.jar')], 
          usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
     }
 
