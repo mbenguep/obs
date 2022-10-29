@@ -4,7 +4,7 @@
  
   <groupId>Bank</groupId>
   <artifactId>obs</artifactId>
-  <packaging>pom</packaging>
+  <name>obs</name>
   <version>1.0-SNAPSHOT</version>
  
   <properties>
