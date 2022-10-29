@@ -4,7 +4,7 @@
  
   <groupId>Bank</groupId>
   <artifactId>obs</artifactId>
-  <version>1.0</version>
+  <version></version>
  
   <properties>
     <sonar.java.source>11</sonar.java.source>
