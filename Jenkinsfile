@@ -20,7 +20,7 @@ node{
     stage('Create docker image onto dockerhub') {
 
         sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '',
-         execCommand: '''ansible-playbook create_image.yml;
+         execCommand: '''ansible-playbook obs-image.yml;
          sleep 10''', execTimeout: 1200000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+',
          remoteDirectory: '//opt//docker', 
          remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/*.jar')], 
